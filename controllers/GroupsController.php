@@ -43,6 +43,16 @@ class GroupsController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionIndex1()
+    {
+        $searchModel = new GroupsSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index1', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
     /**
      * Displays a single Groups model.
